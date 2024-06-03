@@ -21,4 +21,15 @@ public interface Mapper {
                 product.active()
         );
     }
+
+    static Product mapProductDtoToProduct(ProductDto productDto){
+        return new Product(
+                productDto.id(),
+                productDto.name(),
+                productDto.category(),
+                productDto.partNumberNR(),
+                productDto.companyName(),
+                productDto.active()
+        );
+    }
 }

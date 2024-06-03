@@ -23,7 +23,6 @@ public class ProductController {
 
     private final ProductService productService;
 
-
     @PostMapping(value = "/count")
     public ResponseEntity<ProductCountResponse> getProductCount(@RequestParam("file") MultipartFile file) {
         int productCount = productService.getProductCount(file);
@@ -42,22 +41,6 @@ public class ProductController {
         Product productByName = productService.getProductByName(file, name);
         return ResponseEntity.ok(new SingleProductResponse(mapProductToProductDto(productByName)));
     }
-
-
-    //alternative approach
-
-/*    @GetMapping
-    public ResponseEntity<AllProductsReponse> getAllProducts(@RequestParam("file") MultipartFile file) {
-        List<Product> allProducts = productService.getAllProducts(file);
-        return ResponseEntity.ok(new AllProductsReponse(mapProductListToProductDtoList(allProducts)));
-    }
-
-    @GetMapping
-    public ResponseEntity<SingleProductResponse> getProductByName(
-            @RequestParam("file") MultipartFile file, @RequestParam("name") String name) {
-        Product productByName = productService.getProductByName(file, name);
-        return ResponseEntity.ok(new SingleProductResponse(mapProductToProductDto(productByName)));
-    }*/
 }
 
 
