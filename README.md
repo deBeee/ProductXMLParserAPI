@@ -2,7 +2,7 @@
 
 ## Overview
 
-This API provides endpoints for handling product data from an XML file. The endpoints allow users to get the count of products, retrieve all products, and find a specific product by name.
+This API provides endpoints for handling product data from an XML file. The endpoints allow users to get the number of products, retrieve all products, and find a specific product by name.
 
 ## Endpoints
 
@@ -106,7 +106,7 @@ Error:
 
 ## Error Handling
 
-The API includes global exception handling for the following scenarios:
+The API includes exception handling for the following scenarios:
 
 - **ProductNotFoundException**: Thrown when a product with the specified name is not found. (described above)
 - **XmlStreamReadException**: Thrown when XML file does not contain xml content.
